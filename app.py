@@ -113,4 +113,4 @@ else:
                 is_anomaly = 1 if latency > threshold_ms else int(data.get("is_anomaly", 0))
                 status = 503 if is_anomaly == 1 else int(data.get("status", 200))
             else:
-                latency, status, is_anomaly = get_simulated_point(traffic_mode, threshol
+                latency, status, is_anomaly = get_simulated_point(traffic_mode, threshol)
