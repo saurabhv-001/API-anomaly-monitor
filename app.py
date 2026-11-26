@@ -1,5 +1,3 @@
-import time
-import pandas as pd
 import requests
 import streamlit as st
 
@@ -13,9 +11,7 @@ st.markdown(
     " Forest ML Anomaly Detection"
 )
 
-# Initialize session state history for live charts
-if "history" not in st.session_state:
-  st.session_state.history = pd.DataFrame(
+# Initialize session state history for live chartsssion_state.history = pd.DataFrame(
       columns=["timestamp", "latency", "status", "is_anomaly"]
   )
 
@@ -57,13 +53,4 @@ while True:
       metric_alert.success("🟢 System Status: Normal")
 
     # Update Line Chart
-    chart_data = st.session_state.history.set_index("timestamp")[["latency"]]
-    chart_placeholder.line_chart(chart_data)
-
-  except Exception as e:
-    st.warning(
-        "⚠️ Waiting for FastAPI Backend to start... Run `uvicorn main:app"
-        " --reload` in terminal."
-    )
-
-  time.sleep(1)  # Refresh every 1 second
+    chart_data = st.session_state.histor
