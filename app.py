@@ -115,6 +115,6 @@ else:
             else:
                 latency, status, is_anomaly = get_simulated_point(traffic_mode, threshold_ms)
         except Exception:
-            latency,status,is anomaly =get_simulated_point(traffic_mode,threshold_ms)
+            latency,status,is_anomaly =get_simulated_point(traffic_mode,threshold_ms)
             render_dashboard(latency,status, is_anomaly)
             time.sleep(refresh_sec)
