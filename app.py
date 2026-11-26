@@ -17,7 +17,6 @@ st.caption(
 if "history" not in st.session_state:
     st.session_state.history = pd.DataFrame(columns=["timestamp", "latency"])
 
-# --- App Control Panel (Sidebar) ---
 st.sidebar.header("App Controls")
 is_running = st.sidebar.toggle("Live Monitoring", value=True)
 traffic_mode = st.sidebar.selectbox(
@@ -114,4 +113,4 @@ else:
                 is_anomaly = 1 if latency > threshold_ms else int(data.get("is_anomaly", 0))
                 status = 503 if is_anomaly == 1 else int(data.get("status", 200))
             else:
-                latency, status, is_anomaly = get_
+                latency, status, is_anomaly = get_simulated_point(traffic_mode, threshol
